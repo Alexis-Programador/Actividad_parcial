@@ -21,7 +21,7 @@ public class SqlInjectionExample {
             Statement stmt = conn.createStatement();
 
             // Vulnerable query
-            String query = "SELECT * FROM users WHERE username = '" + username + "'";
+          String query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
 
             stmt.executeQuery(query);
 
@@ -31,4 +31,5 @@ public class SqlInjectionExample {
             e.printStackTrace();
         }
     }
+
 }
